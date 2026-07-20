@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img">
+  <rect width="520" height="520" fill="#f7f6f2"/>
+  <g stroke="#d3d0c7" stroke-width="1">
+    <path d="M0 65h520M0 130h520M0 195h520M0 260h520M0 325h520M0 390h520M0 455h520"/>
+    <path d="M65 0v520M130 0v520M195 0v520M260 0v520M325 0v520M390 0v520M455 0v520"/>
+  </g>
+  <g fill="none" stroke="#5b6a70" stroke-width="3">
+    <path d="M92 154 172 236 270 151 338 286 427 217"/>
+    <path d="M172 236 210 347 338 286M270 151 427 217"/>
+  </g>
+  <g fill="#315a72" stroke="#f7f6f2" stroke-width="7">
+    <circle cx="92" cy="154" r="15"/><circle cx="172" cy="236" r="15"/><circle cx="270" cy="151" r="15"/>
+    <circle cx="338" cy="286" r="15"/><circle cx="427" cy="217" r="15"/><circle cx="210" cy="347" r="15"/>
+  </g>
+  <g transform="translate(278 327) rotate(-5)">
+    <rect width="150" height="112" fill="#fffefa" stroke="#191919" stroke-width="2"/>
+    <g stroke="#315a72" stroke-width="12" opacity=".38">
+      <path d="M18 0v112M54 0v112M112 0v112"/>
+    </g>
+    <g stroke="#d3d0c7"><path d="M0 28h150M0 56h150M0 84h150"/></g>
+  </g>
+  <text x="36" y="478" fill="#65645f" font-family="monospace" font-size="14" letter-spacing="2">GRAPH × FACTOR × SPARSITY</text>
+</svg>
