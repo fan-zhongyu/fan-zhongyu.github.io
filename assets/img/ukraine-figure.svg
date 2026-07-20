@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img">
+  <rect width="520" height="520" fill="#f7f6f2"/>
+  <g stroke="#d3d0c7" stroke-width="1">
+    <path d="M55 60v380M55 440h415"/>
+    <path d="M55 155h415M55 250h415M55 345h415" stroke-dasharray="4 7"/>
+  </g>
+  <g fill="none" stroke-width="4">
+    <path d="M70 340C150 315 170 185 250 220s92 105 198 28" stroke="#315a72"/>
+    <path d="M70 270c76 38 115 8 178-40s111-56 200-20" stroke="#8aa7b4"/>
+    <path d="M70 190c86-42 130 80 205 86s104-98 173-65" stroke="#60625f"/>
+    <path d="M70 382c90-17 132-8 196-67s119-47 182-4" stroke="#9c9a93"/>
+  </g>
+  <g fill="#191919" stroke="#f7f6f2" stroke-width="5">
+    <circle cx="70" cy="340" r="10"/><circle cx="250" cy="220" r="10"/><circle cx="448" cy="248" r="10"/>
+    <circle cx="70" cy="270" r="10"/><circle cx="248" cy="230" r="10"/><circle cx="448" cy="210" r="10"/>
+    <circle cx="70" cy="190" r="10"/><circle cx="275" cy="276" r="10"/><circle cx="448" cy="211" r="10"/>
+  </g>
+  <g fill="#315a72" font-family="monospace" font-size="13">
+    <text x="51" y="466">W1</text><text x="244" y="466">W2</text><text x="437" y="466">W3</text>
+  </g>
+  <text x="36" y="38" fill="#65645f" font-family="monospace" font-size="14" letter-spacing="2">LONGITUDINAL TRAJECTORIES</text>
+</svg>
