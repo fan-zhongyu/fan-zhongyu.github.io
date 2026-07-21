@@ -43,8 +43,8 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="{{ '/assets/css/zhongyu.css' | relative_url }}">
-    <script src="{{ '/assets/js/zhongyu.js' | relative_url }}" defer></script>
+    <link rel="stylesheet" href="{{ '/assets/css/zhongyu.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+    <script src="{{ '/assets/js/zhongyu.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
