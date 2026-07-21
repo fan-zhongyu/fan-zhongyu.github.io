@@ -45,6 +45,12 @@
     </script>
     <link rel="stylesheet" href="{{ '/assets/css/zhongyu.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
     <script src="{{ '/assets/js/zhongyu.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="e0c14c23-ddac-4815-bb0e-dfa69c8bf077"
+      data-domains="fan-zhongyu.github.io"
+    ></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -294,7 +300,7 @@
       <section id="visitors" aria-labelledby="visitors-heading">
         <h2 class="section-heading" id="visitors-heading">Global visitor map</h2>
         <div class="visitor-panel">
-          <div class="visitor-widget" aria-label="Live, non-interactive map of approximate visitor locations">
+          <div class="visitor-widget" aria-label="Live map of approximate visitor locations with city labels on marker hover">
             <script id="_wau___">
               var _wau = _wau || [];
               _wau.push(['map', 'ym9w464iyn', '___', '250', '125', 'night', 'cross-pink']);
@@ -307,7 +313,8 @@
             <span>Statistical significance: still pending.</span>
           </p>
           <p class="visitor-privacy">
-            Approximate locations only. The map is intentionally non-interactive; precise addresses and raw IP data are not shown.
+            Approximate locations only. Hover over a marker for its city; the map does not link to an external statistics page. Precise addresses and
+            raw IP data are not shown.
           </p>
         </div>
       </section>

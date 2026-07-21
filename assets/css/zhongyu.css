@@ -441,6 +441,8 @@ section {
 .visitor-widget > span > span {
   top: 0;
   left: 0;
+  cursor: help;
+  pointer-events: auto;
 }
 
 .visitor-panel p {
