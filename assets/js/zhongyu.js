@@ -65,6 +65,32 @@
   }
 
   const visitorCount = document.querySelector("[data-visitor-count]");
+  const visitorWidget = document.querySelector(".visitor-widget");
+
+  if (visitorWidget) {
+    const disableExternalMapLinks = () => {
+      visitorWidget.querySelectorAll("a").forEach((link) => {
+        link.removeAttribute("href");
+        link.removeAttribute("target");
+        link.removeAttribute("onclick");
+        link.setAttribute("tabindex", "-1");
+      });
+    };
+
+    const blockMapNavigation = (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    };
+
+    visitorWidget.addEventListener("click", blockMapNavigation, true);
+    visitorWidget.addEventListener("auxclick", blockMapNavigation, true);
+
+    disableExternalMapLinks();
+    new MutationObserver(disableExternalMapLinks).observe(visitorWidget, {
+      childList: true,
+      subtree: true,
+    });
+  }
 
   if (visitorCount && window.location.hostname === "fan-zhongyu.github.io") {
     const endpoint = "https://page-views-api.ratneshc.com/api/v1";

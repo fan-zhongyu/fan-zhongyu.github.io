@@ -461,13 +461,6 @@ section {
   font-variant-numeric: tabular-nums;
 }
 
-.visitor-count span {
-  display: block;
-  margin-top: 3px;
-  font-size: 11px;
-  opacity: 0.72;
-}
-
 .visitor-panel .visitor-privacy {
   margin-top: 14px;
   font-size: 9.5px;
