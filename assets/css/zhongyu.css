@@ -418,20 +418,29 @@ section {
   text-align: center;
 }
 
-.visitor-panel img {
-  width: 300px;
-  height: 150px;
+.visitor-widget {
+  display: flex;
+  min-height: 125px;
   margin: 0 auto 15px;
-  object-fit: contain;
-}
-
-html[data-theme="dark"] .visitor-panel img {
-  filter: invert(1);
+  justify-content: center;
+  align-items: center;
 }
 
 .visitor-panel p {
   max-width: 360px;
   margin: 8px auto;
+}
+
+.visitor-panel .visitor-privacy {
+  margin-top: 14px;
+  font-size: 9.5px;
+  line-height: 1.4;
+  opacity: 0.72;
+}
+
+.visitor-privacy a {
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
 }
 
 .site-footer {
@@ -540,12 +549,6 @@ html[data-theme="dark"] .visitor-panel img {
   .visitor-panel {
     padding: 30px 24px 38px;
     font-size: 15px;
-  }
-
-  .visitor-panel img {
-    width: min(100%, 300px);
-    height: auto;
-    aspect-ratio: 2;
   }
 }
 

@@ -294,9 +294,23 @@
       <section id="visitors" aria-labelledby="visitors-heading">
         <h2 class="section-heading" id="visitors-heading">Global visitor map</h2>
         <div class="visitor-panel">
-          <img src="{{ '/assets/img/world-map.png' | relative_url }}" alt="World map" width="1280" height="640" loading="lazy">
-          <p>Approximate readership locations will appear here after a privacy-safe analytics endpoint is selected.</p>
-          <p class="entry-meta">This static page does not collect raw IP addresses.</p>
+          <div class="visitor-widget" aria-label="Live map of approximate visitor locations">
+            <script id="_wau___">
+              var _wau = _wau || [];
+              _wau.push(['map', 'ym9w464iyn', '___', '250', '125', 'night', 'cross-pink']);
+            </script>
+            <script async src="//waust.at/m.js"></script>
+            <noscript>
+              <a href="https://whos.amung.us/stats/maps/ym9w464iyn/" target="_blank" rel="noopener">View visitor map</a>
+            </noscript>
+          </div>
+          <p>Click the map to explore public, approximate visitor locations and aggregate statistics.</p>
+          <p class="visitor-privacy">
+            Statistics are processed by
+            <a href="https://whos.amung.us/" target="_blank" rel="noopener">whos.amung.us</a>. The service receives standard request data and
+            anonymizes IP addresses by removing the final octet. See its
+            <a href="https://whos.amung.us/legal/privacy/" target="_blank" rel="noopener">privacy and opt-out information</a>.
+          </p>
         </div>
       </section>
     </main>
