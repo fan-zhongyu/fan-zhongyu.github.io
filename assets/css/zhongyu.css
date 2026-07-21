@@ -426,6 +426,8 @@ section {
   margin: 0 auto 15px;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
+  user-select: none;
 }
 
 .visitor-widget > span {
@@ -434,6 +436,11 @@ section {
   width: 250px !important;
   height: 125px !important;
   margin-right: 0 !important;
+}
+
+.visitor-widget > span > span {
+  top: 0;
+  left: 0;
 }
 
 .visitor-panel p {
@@ -464,11 +471,6 @@ section {
   font-size: 9.5px;
   line-height: 1.4;
   opacity: 0.72;
-}
-
-.visitor-privacy a {
-  text-decoration: underline dotted;
-  text-underline-offset: 2px;
 }
 
 .site-footer {
