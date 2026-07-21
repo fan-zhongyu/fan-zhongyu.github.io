@@ -242,6 +242,14 @@ section {
   margin: 1em 0;
 }
 
+.entry-copy .about-greeting {
+  margin: 0 0 1.35em;
+}
+
+.about-greeting + p {
+  margin-top: 0;
+}
+
 .entry-title,
 .entry-copy strong {
   font-weight: 700;
