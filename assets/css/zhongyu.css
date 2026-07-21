@@ -420,15 +420,43 @@ section {
 
 .visitor-widget {
   display: flex;
+  width: 250px;
+  max-width: 100%;
   min-height: 125px;
   margin: 0 auto 15px;
   justify-content: center;
   align-items: center;
 }
 
+.visitor-widget > span {
+  position: relative;
+  flex: 0 0 250px;
+  width: 250px !important;
+  height: 125px !important;
+  margin-right: 0 !important;
+}
+
 .visitor-panel p {
   max-width: 360px;
   margin: 8px auto;
+}
+
+.visitor-panel .visitor-count {
+  max-width: none;
+  margin: 16px auto 13px;
+  font-size: 13px;
+}
+
+.visitor-count strong {
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+}
+
+.visitor-count span {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  opacity: 0.72;
 }
 
 .visitor-panel .visitor-privacy {
