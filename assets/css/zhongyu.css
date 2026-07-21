@@ -291,17 +291,16 @@ section {
   object-position: 42% center;
 }
 
-.institution-mark {
-  display: grid;
-  border: 2px solid var(--ink);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  place-items: center;
+.brown-campus img {
+  object-position: 31% center;
 }
 
-.institution-mark-small {
-  font-size: 22px;
+.unnc-campus img {
+  object-position: 50% 48%;
+}
+
+.nyu-shanghai-campus img {
+  object-position: 70% center;
 }
 
 .plain-list,
