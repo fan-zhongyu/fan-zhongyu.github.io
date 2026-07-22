@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Zhongyu Fan">
+    <meta
+      name="description"
+      content="An interactive study of Barcelona's 2014–15 passing geometry, built from StatsBomb Open Data."
+    >
+    <link rel="canonical" href="https://fan-zhongyu.github.io/projects/geometry-of-a-treble/">
+    <meta property="og:title" content="The Geometry of a Treble">
+    <meta property="og:description" content="Barcelona's 2014–15 season redrawn through passing structure and attack paths.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fan-zhongyu.github.io/projects/geometry-of-a-treble/">
+    <meta name="theme-color" content="#f1e7d2">
+    <title>The Geometry of a Treble</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#visual">Skip to the visualisation</a>
+
+    <header class="site-header">
+      <a class="identity" href="./" aria-label="The Geometry of a Treble, restart">
+        <span class="edition" aria-hidden="true">BCN</span>
+        <span class="identity-copy">
+          <span class="identity-kicker" aria-hidden="true">2014—15 · field study</span>
+          <h1>The Geometry of a Treble</h1>
+        </span>
+      </a>
+
+      <nav class="view-navigation" aria-label="Visualisation view">
+        <div class="view-switch" role="group" aria-label="Choose a view">
+          <button class="view-button is-active" id="structureView" type="button" aria-pressed="true">
+            Structure
+          </button>
+          <button class="view-button" id="attacksView" type="button" aria-pressed="false">
+            Attacks
+          </button>
+        </div>
+        <button class="index-button" id="openIndex" type="button" aria-haspopup="dialog">
+          Index
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="match-heading" aria-labelledby="fixtureLabel">
+        <div class="match-copy">
+          <p class="match-context" id="matchContext">Loading the season…</p>
+          <h2 id="fixtureLabel">Barcelona</h2>
+          <p class="match-measures" id="matchMeasures" aria-live="polite"></p>
+        </div>
+
+        <div class="match-score-row">
+          <button class="step-button" id="previousMatch" type="button" aria-label="Previous match">
+            <span aria-hidden="true">←</span>
+          </button>
+          <p class="match-score" id="matchScore" aria-label="Score">—</p>
+          <button class="step-button" id="nextMatch" type="button" aria-label="Next match">
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="visual-section" id="visual" aria-labelledby="visualTitle">
+        <h2 class="sr-only" id="visualTitle">Barcelona match visualisation</h2>
+        <div class="pitch-frame" id="pitchFrame">
+          <svg
+            id="pitch"
+            class="pitch"
+            viewBox="-7 -7 134 94"
+            role="group"
+            aria-labelledby="pitchTitle pitchDescription"
+          >
+            <title id="pitchTitle">Barcelona passing structure</title>
+            <desc id="pitchDescription">
+              Average passing origins and completed-pass connections for the selected match.
+            </desc>
+
+            <g class="pitch-grid" aria-hidden="true">
+              <path d="M20 0V80M40 0V80M80 0V80M100 0V80"></path>
+              <path d="M0 20H120M0 40H120M0 60H120"></path>
+            </g>
+            <g class="pitch-lines" aria-hidden="true">
+              <rect x="0" y="0" width="120" height="80"></rect>
+              <path d="M60 0V80"></path>
+              <circle cx="60" cy="40" r="10"></circle>
+              <circle class="pitch-dot" cx="60" cy="40" r="0.55"></circle>
+              <path d="M0 18H18V62H0M120 18H102V62H120"></path>
+              <path d="M0 30H6V50H0M120 30H114V50H120"></path>
+              <circle class="pitch-dot" cx="12" cy="40" r="0.55"></circle>
+              <circle class="pitch-dot" cx="108" cy="40" r="0.55"></circle>
+              <path d="M-2 36H0V44H-2M122 36H120V44H122"></path>
+            </g>
+
+            <g id="flowLayer" class="flow-layer"></g>
+            <g id="networkLayer" class="network-layer" aria-hidden="true"></g>
+            <g id="triangleLayer" class="triangle-layer" aria-hidden="true"></g>
+            <g id="playerLayer" class="player-layer"></g>
+          </svg>
+
+          <div class="tooltip" id="tooltip" role="status" aria-hidden="true"></div>
+          <p class="loading-state" id="loadingState" role="status">Reading 39 matches</p>
+        </div>
+
+        <div class="inspection-line" aria-live="polite" aria-atomic="true">
+          <p id="inspectionPrimary">Completed open-play passes define the shape.</p>
+          <p id="inspectionSecondary"></p>
+        </div>
+      </section>
+
+      <section class="chronology" aria-labelledby="chronologyTitle">
+        <div class="chronology-labels">
+          <h2 id="chronologyTitle">Season</h2>
+          <p><span id="selectedOrdinal">01</span> / 39</p>
+        </div>
+        <div
+          class="timeline"
+          id="timeline"
+          role="group"
+          aria-label="Select one of 39 matches"
+        ></div>
+        <div class="timeline-axis" aria-hidden="true">
+          <span>24 Aug 2014</span>
+          <span>La Liga · 38 matches</span>
+          <span>06 Jun 2015</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Pass origin, not player tracking</p>
+      <button class="footer-mode" id="footerMode" type="button">Barcelona attacks →</button>
+    </footer>
+
+    <dialog class="index-drawer" id="indexDrawer" aria-labelledby="indexTitle">
+      <div class="drawer-inner">
+        <header class="drawer-header">
+          <p class="drawer-number" aria-hidden="true">I</p>
+          <h2 id="indexTitle">Index</h2>
+          <button class="drawer-close" id="closeIndex" type="button">Close</button>
+        </header>
+
+        <div class="drawer-content">
+          <section aria-labelledby="aboutTitle">
+            <p class="section-number" aria-hidden="true">01</p>
+            <div>
+              <h3 id="aboutTitle">About</h3>
+              <p>
+                A season is usually compressed into a table. This work treats it as a changing
+                spatial object. Each match redraws Barcelona from the origins of completed
+                open-play passes; the triangle isolates Messi, Suárez and Neymar when all three
+                appear.
+              </p>
+              <p>
+                The scope is deliberately exact: all 38 La Liga matches from 2014–15, followed
+                by the Champions League final as an epilogue. It does not claim to represent the
+                complete European campaign.
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="methodTitle">
+            <p class="section-number" aria-hidden="true">02</p>
+            <div>
+              <h3 id="methodTitle">Method</h3>
+              <p>
+                A player’s position is the mean origin of his completed open-play passes, not a
+                tracking-derived location. Lines count successful passes between visible players.
+                The attack view retains possessions that reached the final third or ended in a
+                shot, then draws one directional curve from the first action to the deepest point.
+              </p>
+              <p>
+                StatsBomb coordinates use a 120 × 80 field and orient the team in possession from
+                left to right. Set pieces are excluded from the passing structure. Hover, tap or
+                focus a player, shot path or match mark to reveal its values.
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="extensionTitle">
+            <p class="section-number" aria-hidden="true">03</p>
+            <div>
+              <h3 id="extensionTitle">Extensions</h3>
+              <p>
+                The same grammar can follow individual goal sequences, compare score states, or
+                add opponent pressure once equivalent event or tracking data is available. A
+                future edition could also measure how the MSN triangle changes before and after
+                substitutions rather than reducing each match to one centroid.
+              </p>
+            </div>
+          </section>
+
+          <section aria-labelledby="citationTitle">
+            <p class="section-number" aria-hidden="true">04</p>
+            <div>
+              <h3 id="citationTitle">Citation</h3>
+              <p>
+                Fan, Zhongyu. <em>The Geometry of a Treble</em>. Interactive data visualisation,
+                2026.
+              </p>
+              <pre id="citationText">@misc{fan2026geometry,
+  author = {Zhongyu Fan},
+  title  = {The Geometry of a Treble},
+  year   = {2026},
+  note   = {Interactive data visualisation}
+}</pre>
+              <button class="copy-button" id="copyCitation" type="button">Copy BibTeX</button>
+              <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+            </div>
+          </section>
+
+          <section class="data-credit" aria-labelledby="dataTitle">
+            <p class="section-number" aria-hidden="true">05</p>
+            <div>
+              <h3 id="dataTitle">Data</h3>
+              <a
+                class="statsbomb-credit"
+                href="https://github.com/hudl/open-data"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <img src="./assets/statsbomb-icon.svg" alt="StatsBomb">
+                <span>Event data: StatsBomb Open Data</span>
+              </a>
+              <p>
+                The site includes transformed aggregates only. Source files can be rebuilt using
+                the documented script in the repository.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </dialog>
+
+    <noscript>This work needs JavaScript to draw the season.</noscript>
+  </body>
+</html>
