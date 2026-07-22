@@ -433,14 +433,18 @@ section {
   padding-top: 10px;
 }
 
-.resource-list a {
+.resource-list .resource-item {
   display: grid;
   grid-template-columns: 58px minmax(0, 1fr);
   gap: 30px;
   padding: 7px 0;
 }
 
-.resource-list a span {
+.resource-list .resource-item a {
+  display: block;
+}
+
+.resource-list .resource-item span {
   font-size: 12px;
   font-weight: 400;
 }
@@ -969,7 +973,7 @@ html.soccer-lightbox-open body {
   }
 
   .experience-list article,
-  .resource-list a {
+  .resource-list .resource-item {
     grid-template-columns: 52px minmax(0, 1fr);
     gap: 18px;
   }
