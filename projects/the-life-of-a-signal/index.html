@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An interactive study of how a social signal spreads, peaks, and fades.">
+    <meta name="author" content="Zhongyu Fan">
+    <link rel="canonical" href="https://fan-zhongyu.github.io/projects/the-life-of-a-signal/">
+    <meta property="og:title" content="The Life of a Signal">
+    <meta property="og:description" content="A quiet interactive study of how social signals spread and fade, by Zhongyu Fan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fan-zhongyu.github.io/projects/the-life-of-a-signal/">
+    <title>The Life of a Signal — Zhongyu Fan</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f4f3ef'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23111111'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="experience">
+      <header class="folio-line">
+        <span class="work-title">The life of a signal</span>
+        <span class="live-index"><span id="lens-label">new product</span> · day <output id="day-output">000</output></span>
+      </header>
+
+      <main class="field" aria-labelledby="work-heading">
+        <h1 id="work-heading" class="sr-only">The Life of a Signal</h1>
+        <canvas id="network-canvas" role="img" aria-label="A synthetic social field. Hollow circles are unreached people, solid circles are active participants, and crosses are people who have moved on."></canvas>
+
+        <div class="field-note" id="field-note" aria-live="polite">
+          <span id="phase-title">A small seed begins to move.</span>
+          <span id="phase-detail">Move across the field to inspect its local structure.</span>
+        </div>
+
+        <div class="probe" id="node-tooltip" role="status" hidden></div>
+
+        <div class="field-key" id="field-key" aria-label="Network marks">
+          <span><i class="mark mark-open" aria-hidden="true"></i><b id="key-potential">not reached</b></span>
+          <span><i class="mark mark-solid" aria-hidden="true"></i><b id="key-active">active</b></span>
+          <span><i class="mark mark-cross" aria-hidden="true"></i><b id="key-churned">moved on</b></span>
+        </div>
+
+        <div class="compare-note" id="compare-note" hidden aria-live="polite">
+          <span id="compare-label">keep people longer</span>
+          <strong id="compare-result">+23% cumulative participation</strong>
+        </div>
+
+        <aside class="conditions" id="conditions" aria-labelledby="conditions-title" aria-hidden="true" inert>
+          <header>
+            <h2 id="conditions-title">Conditions</h2>
+            <button type="button" id="conditions-close" aria-label="Close conditions">Close</button>
+          </header>
+
+          <div class="condition">
+            <label for="influence-slider">Peer influence <output id="influence-output">20%</output></label>
+            <input id="influence-slider" type="range" min="0.04" max="0.42" step="0.005" value="0.20">
+            <small>how strongly participation persuades</small>
+          </div>
+
+          <div class="condition">
+            <label for="dropoff-slider">Drop-off <output id="dropoff-output">5.0% / day</output></label>
+            <input id="dropoff-slider" type="range" min="0.015" max="0.14" step="0.0025" value="0.05">
+            <small>how quickly active people disengage</small>
+          </div>
+
+          <div class="condition">
+            <label for="memory-slider">Attention half-life <output id="memory-output">13 days</output></label>
+            <input id="memory-slider" type="range" min="4" max="28" step="1" value="13">
+            <small>how long circulating information remains visible</small>
+          </div>
+
+          <div class="condition">
+            <label for="friction-slider">Crowding <output id="friction-output">moderate</output></label>
+            <input id="friction-slider" type="range" min="0.01" max="0.12" step="0.005" value="0.05">
+            <small>fatigue and friction as participation grows</small>
+          </div>
+
+          <div class="condition">
+            <label for="seed-slider">Initial visibility <output id="seed-output">4%</output></label>
+            <input id="seed-slider" type="range" min="0.015" max="0.15" step="0.005" value="0.035">
+            <small>the size of the initial media or community seed</small>
+          </div>
+
+          <p class="conditions-outcome" id="outcome-text">Peak day 38 · 100% reached · fades day 98</p>
+          <button type="button" class="text-action" id="reset-button">Reset conditions</button>
+        </aside>
+      </main>
+
+      <section class="trace" aria-labelledby="trace-title">
+        <h2 id="trace-title" class="sr-only">Attention over time</h2>
+        <svg id="trace-chart" viewBox="0 0 1200 116" role="img" aria-labelledby="trace-svg-title trace-svg-desc">
+          <title id="trace-svg-title">Attention over 120 days</title>
+          <desc id="trace-svg-desc">A linked time trace of active participation, cumulative reach, and circulating attention. Drag across it to change the day.</desc>
+        </svg>
+        <div class="trace-probe" id="trace-tooltip" hidden></div>
+        <p class="trace-readout" id="trace-readout">04% active · 04% reached · attention 04</p>
+      </section>
+
+      <footer class="instrument-bar">
+        <button type="button" id="play-button" class="instrument-action">Play</button>
+
+        <div class="instrument-menu" id="lens-menu">
+          <button type="button" id="lens-button" class="instrument-action" aria-expanded="false">Lens</button>
+          <div class="menu-sheet" id="lens-sheet" hidden>
+            <button type="button" data-scenario="product" aria-pressed="true">New product</button>
+            <button type="button" data-scenario="health" aria-pressed="false">Public-health message</button>
+            <button type="button" data-scenario="rumor" aria-pressed="false">Online rumor</button>
+          </div>
+        </div>
+
+        <button type="button" id="conditions-button" class="instrument-action" aria-expanded="false">Conditions</button>
+
+        <div class="instrument-menu" id="compare-menu">
+          <button type="button" id="compare-button" class="instrument-action" aria-pressed="false" aria-expanded="false">Compare</button>
+          <div class="menu-sheet compare-sheet" id="compare-sheet" hidden>
+            <button type="button" data-intervention="retention" aria-pressed="true">Keep people longer</button>
+            <button type="button" data-intervention="seed" aria-pressed="false">Double the seed</button>
+            <button type="button" data-intervention="memory" aria-pressed="false">Slow the fade</button>
+            <button type="button" data-intervention="friction" aria-pressed="false">Reduce crowding</button>
+          </div>
+        </div>
+
+        <button type="button" id="about-button" class="instrument-action">About</button>
+
+        <div class="summary-index" aria-live="polite">
+          <span>peak <b id="peak-output">038</b></span>
+          <span>reach <b id="reach-output">100</b></span>
+          <span>fade <b id="fade-output">098</b></span>
+        </div>
+      </footer>
+    </div>
+
+    <dialog id="about-dialog">
+      <form method="dialog">
+        <button value="close" aria-label="Close about dialog">Close</button>
+      </form>
+      <header class="about-lead">
+        <p class="about-title">The life of a signal.</p>
+        <p>An interactive study of the gap between being seen, taking part, and moving on.</p>
+      </header>
+
+      <section class="about-section" aria-labelledby="about-work-title">
+        <h2 id="about-work-title">The work</h2>
+        <p>A synthetic social field is driven by an aggregate model of potential participants, active participants, and circulating information. The same dynamics can be read through three lenses: a product launch, a public-health message, or an online rumor.</p>
+        <p>The field translates population-level quantities into 260 marks. Hollow circle: not reached. Solid circle: active. Cross: moved on. During comparison, the grey field shows a counterfactual rather than a second observed population.</p>
+      </section>
+
+      <section class="about-section" aria-labelledby="about-theory-title">
+        <h2 id="about-theory-title">Theory</h2>
+        <div class="theory-copy">
+          <p>Let <i>P</i> denote people not yet reached, <i>A</i> active participants, and <i>I</i> circulating information or attention. Their aggregate dynamics are:</p>
+          <div class="equations" role="img" aria-label="P dot equals minus beta P I. A dot equals beta P I minus delta A over A plus kappa, minus mu A squared, minus xi A cubed. I dot equals eta A minus nu I.">
+            <p><span><i>Ṗ</i></span><b>=</b><span>−β<i>PI</i></span></p>
+            <p><span><i>Ȧ</i></span><b>=</b><span>β<i>PI</i> − δ<i>A</i>/(<i>A</i> + κ) − μ<i>A</i><sup>2</sup> − ξ<i>A</i><sup>3</sup></span></p>
+            <p><span><i>I&#775;</i></span><b>=</b><span>η<i>A</i> − ν<i>I</i></span></p>
+          </div>
+          <p>Attention helps convert an unreached population into active participation; active participation creates more attention. Drop-off and crowding eventually weaken that feedback, producing take-off, a peak, and a long tail.</p>
+          <p>When no new activity is feeding the signal, <i>I&#775;</i> = −ν<i>I</i>. It follows that <i>I</i>(<i>t</i>) = <i>I</i><sub>0</sub>e<sup>−ν<i>t</i></sup>, with an attention half-life of <span class="theory-result"><i>t</i><sub>1/2</sub> = ln(2)/ν</span>. The half-life control changes ν directly.</p>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="about-boundary-title">
+        <h2 id="about-boundary-title">Boundary</h2>
+        <p>This is an explanatory experiment, not an empirical forecast. The people, communities, and links are synthetic; they make aggregate behaviour legible, but do not establish individual transmission paths or causal effects.</p>
+      </section>
+
+      <section class="about-section" aria-labelledby="about-extension-title">
+        <h2 id="about-extension-title">Possible extensions</h2>
+        <ol class="about-list">
+          <li>Replace the synthetic field with an agent-based network containing heterogeneous people, communities, and thresholds.</li>
+          <li>Estimate parameters from real campaign, platform, public-health, or media time series.</li>
+          <li>Run stochastic ensembles so that every trace carries uncertainty rather than a single deterministic future.</li>
+          <li>Introduce competing narratives, interventions, geography, or platform moderation and compare who is reached—not only how many.</li>
+        </ol>
+      </section>
+
+      <section class="about-section" aria-labelledby="about-citation-title">
+        <h2 id="about-citation-title">Citation</h2>
+        <p id="preferred-citation" class="citation-text">Fan, Zhongyu. 2026. “The Life of a Signal.” Interactive visualisation, version 1.0. https://fan-zhongyu.github.io/projects/the-life-of-a-signal/.</p>
+        <div class="citation-actions">
+          <button type="button" id="copy-citation">Copy citation</button>
+          <span id="copy-status" role="status" aria-live="polite"></span>
+        </div>
+        <p class="about-note">This citation uses the intended permanent project address. The source also includes a <code>CITATION.cff</code> file for archival metadata.</p>
+      </section>
+
+      <section class="about-section" aria-labelledby="about-credit-title">
+        <h2 id="about-credit-title">Credit</h2>
+        <p>Interactive concept, visualisation, and implementation by <strong>Zhongyu Fan</strong>. Model adapted from an MGP study of social-network dynamics at the University of Nottingham Ningbo China. A public or archival release should also retain the full MGP authorship and source bibliography in its documentation.</p>
+      </section>
+    </dialog>
+
+    <noscript>This interactive study requires JavaScript.</noscript>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
