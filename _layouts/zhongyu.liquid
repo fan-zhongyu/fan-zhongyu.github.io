@@ -464,9 +464,13 @@
             <figure class="soccer-gallery-item soccer-gallery-feature">
               <a
                 href="{{ '/assets/img/soccer/golden-boot-under-floodlights.jpg' | relative_url }}"
-                target="_blank"
-                rel="noopener"
-                aria-label="Open A Golden Boot Under the Floodlights in full size"
+                data-soccer-photo
+                data-title="2021 UNNC Freshman Cup — Golden Boot"
+                data-meta="September 2021 · Ningbo, China"
+                data-people="Zhongyu Fan and Jiayi Zhang"
+                data-alt="Zhongyu Fan holding the Freshman Cup Golden Boot with Jiayi Zhang on a floodlit soccer field"
+                aria-label="Open 2021 UNNC Freshman Cup — Golden Boot"
+                aria-haspopup="dialog"
               >
                 <img
                   src="{{ '/assets/img/soccer/golden-boot-under-floodlights.jpg' | relative_url }}"
@@ -475,15 +479,19 @@
                   height="1600"
                   loading="lazy"
                 >
-                <figcaption>A Golden Boot Under the Floodlights</figcaption>
+                <figcaption>2021 UNNC Freshman Cup — Golden Boot</figcaption>
               </a>
             </figure>
             <figure class="soccer-gallery-item">
               <a
                 href="{{ '/assets/img/soccer/after-the-final-whistle.jpg' | relative_url }}"
-                target="_blank"
-                rel="noopener"
-                aria-label="Open After the Final Whistle in full size"
+                data-soccer-photo
+                data-title="UNNC Football League"
+                data-meta="March 2022 · Ningbo, China"
+                data-people="Hongxin Chen, David Woodcock, Zhongyu Fan, and Zhongchi Wang"
+                data-alt="Hongxin Chen, David Woodcock, Zhongyu Fan, and Zhongchi Wang together on a nighttime soccer field"
+                aria-label="Open UNNC Football League"
+                aria-haspopup="dialog"
               >
                 <img
                   src="{{ '/assets/img/soccer/after-the-final-whistle.jpg' | relative_url }}"
@@ -492,15 +500,19 @@
                   height="1200"
                   loading="lazy"
                 >
-                <figcaption>After the Final Whistle</figcaption>
+                <figcaption>UNNC Football League</figcaption>
               </a>
             </figure>
             <figure class="soccer-gallery-item">
               <a
                 href="{{ '/assets/img/soccer/where-it-started.jpg' | relative_url }}"
-                target="_blank"
-                rel="noopener"
-                aria-label="Open Where It Started in full size"
+                data-soccer-photo
+                data-title="Where the Dream Began"
+                data-meta="July 2015 · Huaibei, China"
+                data-people="Huaibei Experimental Primary School Football Team, 2015"
+                data-alt="The 2015 Huaibei Experimental Primary School football team gathered around a soccer ball before a trip"
+                aria-label="Open Where the Dream Began"
+                aria-haspopup="dialog"
               >
                 <img
                   src="{{ '/assets/img/soccer/where-it-started.jpg' | relative_url }}"
@@ -509,12 +521,31 @@
                   height="540"
                   loading="lazy"
                 >
-                <figcaption>Where It Started</figcaption>
+                <figcaption>Where the Dream Began</figcaption>
               </a>
             </figure>
           </div>
         </details>
       </section>
+
+      <dialog class="soccer-lightbox" data-soccer-lightbox aria-labelledby="soccer-lightbox-title">
+        <button class="soccer-lightbox-close" type="button" data-soccer-lightbox-close aria-label="Close photo">×</button>
+        <button class="soccer-lightbox-nav soccer-lightbox-prev" type="button" data-soccer-lightbox-prev aria-label="Previous photo">←</button>
+        <figure class="soccer-lightbox-figure">
+          <img
+            class="soccer-lightbox-image"
+            data-soccer-lightbox-image
+            src="{{ '/assets/img/soccer/golden-boot-under-floodlights.jpg' | relative_url }}"
+            alt="Zhongyu Fan holding the Freshman Cup Golden Boot with Jiayi Zhang on a floodlit soccer field"
+          >
+          <figcaption>
+            <p class="soccer-lightbox-meta" data-soccer-lightbox-meta></p>
+            <h3 id="soccer-lightbox-title" data-soccer-lightbox-title></h3>
+            <p class="soccer-lightbox-people" data-soccer-lightbox-people></p>
+          </figcaption>
+        </figure>
+        <button class="soccer-lightbox-nav soccer-lightbox-next" type="button" data-soccer-lightbox-next aria-label="Next photo">→</button>
+      </dialog>
 
       <section id="contact" aria-labelledby="contact-heading">
         <h2 class="section-heading" id="contact-heading">Contact</h2>

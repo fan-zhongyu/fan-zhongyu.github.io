@@ -64,6 +64,59 @@
     sections.forEach((section) => observer.observe(section));
   }
 
+  const soccerPhotos = [...document.querySelectorAll("[data-soccer-photo]")];
+  const soccerLightbox = document.querySelector("[data-soccer-lightbox]");
+
+  if (soccerLightbox && soccerPhotos.length && typeof soccerLightbox.showModal === "function") {
+    const lightboxImage = soccerLightbox.querySelector("[data-soccer-lightbox-image]");
+    const lightboxTitle = soccerLightbox.querySelector("[data-soccer-lightbox-title]");
+    const lightboxMeta = soccerLightbox.querySelector("[data-soccer-lightbox-meta]");
+    const lightboxPeople = soccerLightbox.querySelector("[data-soccer-lightbox-people]");
+    const closeButton = soccerLightbox.querySelector("[data-soccer-lightbox-close]");
+    const previousButton = soccerLightbox.querySelector("[data-soccer-lightbox-prev]");
+    const nextButton = soccerLightbox.querySelector("[data-soccer-lightbox-next]");
+    let activePhoto = 0;
+
+    const showSoccerPhoto = (index) => {
+      activePhoto = (index + soccerPhotos.length) % soccerPhotos.length;
+      const photo = soccerPhotos[activePhoto];
+
+      lightboxImage.src = photo.href;
+      lightboxImage.alt = photo.dataset.alt;
+      lightboxTitle.textContent = photo.dataset.title;
+      lightboxMeta.textContent = photo.dataset.meta;
+      lightboxPeople.textContent = photo.dataset.people;
+    };
+
+    soccerPhotos.forEach((photo, index) => {
+      photo.addEventListener("click", (event) => {
+        event.preventDefault();
+        showSoccerPhoto(index);
+        soccerLightbox.showModal();
+        root.classList.add("soccer-lightbox-open");
+        closeButton?.focus();
+      });
+    });
+
+    closeButton?.addEventListener("click", () => soccerLightbox.close());
+    previousButton?.addEventListener("click", () => showSoccerPhoto(activePhoto - 1));
+    nextButton?.addEventListener("click", () => showSoccerPhoto(activePhoto + 1));
+
+    soccerLightbox.addEventListener("click", (event) => {
+      const interactiveContent = event.target.closest(".soccer-lightbox-image, .soccer-lightbox-figure figcaption, button");
+      if (!interactiveContent) soccerLightbox.close();
+    });
+
+    soccerLightbox.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") showSoccerPhoto(activePhoto - 1);
+      if (event.key === "ArrowRight") showSoccerPhoto(activePhoto + 1);
+    });
+
+    soccerLightbox.addEventListener("close", () => {
+      root.classList.remove("soccer-lightbox-open");
+    });
+  }
+
   const visitorCount = document.querySelector("[data-visitor-count]");
   const visitorWidget = document.querySelector(".visitor-widget");
 
