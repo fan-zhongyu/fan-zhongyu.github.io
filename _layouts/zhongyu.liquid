@@ -151,10 +151,10 @@
           </div>
           <figure class="square-media project-art">
             <img
-              src="{{ '/assets/img/flare-manhattan-cover.jpg' | relative_url }}"
-              alt="Synthetic GWAS Manhattan plot illustrating association signals for the FLARE project"
-              width="800"
-              height="800"
+              src="{{ '/assets/img/flare-manhattan-cover.jpg' | relative_url }}?v=20260722"
+              alt="GWAS Manhattan plot connected to functional-annotation tracks and latent factor matrices"
+              width="600"
+              height="600"
               loading="lazy"
             >
           </figure>
@@ -208,6 +208,36 @@
       <section id="projects" aria-labelledby="projects-heading">
         <h2 class="section-heading" id="projects-heading">Projects</h2>
 
+        <h3 class="project-subheading">Graduate</h3>
+
+        <article class="content-row media-left">
+          <figure class="square-media project-art">
+            <img
+              src="{{ '/assets/img/abm-seir-cover.jpg' | relative_url }}"
+              alt="Agent network with four epidemic states above a family of Monte Carlo trajectories"
+              width="600"
+              height="600"
+              loading="lazy"
+            >
+          </figure>
+          <div class="entry-copy">
+            <p><strong class="entry-title">ABM–SEIR Simulation Platform</strong></p>
+            <p>
+              What changes when people stop behaving like identical dots in an equation? This Shiny app lets individual agents meet, move through
+              S–E–I–R states, and generate many possible epidemic curves. Run Monte Carlo scenarios, compare interventions, and watch small
+              behavioural assumptions become population-level outcomes. The agents never cough; the confidence intervals still get busy.
+            </p>
+            <p class="entry-meta">Agent-based modelling · SEIR · Monte Carlo simulation</p>
+            <p class="entry-links">
+              <a class="quiet-link" href="https://zhongyu.shinyapps.io/2560FinalProject/" target="_blank" rel="noopener">Site</a>
+              ·
+              <a class="quiet-link" href="https://github.com/fan-zhongyu/ABM-SEIR-Simulation" target="_blank" rel="noopener">Code</a>
+            </p>
+          </div>
+        </article>
+
+        <h3 class="project-subheading">Undergraduate</h3>
+
         <article class="content-row media-left">
           <figure class="square-media project-art signal-cover">
             <img
@@ -251,14 +281,58 @@
                 >Poster ↗</a
               >
             </p>
-            <p class="entry-credit">Cover detail: floral yeast biofilm by Ee Lin Tek, reproduced in Tam (2019) · cropped from the project poster</p>
           </div>
           <figure class="square-media project-art yeast-biofilm-cover">
             <img
-              src="{{ '/assets/img/yeast-biofilm-floral-cover-v2.jpg' | relative_url }}?v=20260721"
-              alt="Petal-like floral pattern formed by a yeast biofilm in a Petri dish"
-              width="480"
-              height="480"
+              src="{{ '/assets/img/yeast-biofilm-floral-cover-v2.jpg' | relative_url }}?v=20260722"
+              alt="Scientific illustration of a yeast biofilm forming a radial floral boundary"
+              width="600"
+              height="600"
+              loading="lazy"
+            >
+          </figure>
+        </article>
+
+        <h3 class="project-subheading">Personal</h3>
+
+        <article class="content-row media-left">
+          <figure class="square-media project-art">
+            <img
+              src="{{ '/assets/img/geometry-of-a-treble-cover.jpg' | relative_url }}"
+              alt="Abstract passing network built around a three-forward triangle and attacking paths"
+              width="600"
+              height="600"
+              loading="lazy"
+            >
+          </figure>
+          <div class="entry-copy">
+            <p><strong class="entry-title">MSN</strong></p>
+            <p>Barcelona’s 2014–15 season redrawn through passing structure, the MSN triangle, and attacking paths.</p>
+            <p class="entry-meta">Passing networks · Attacking structure · StatsBomb Open Data</p>
+            <p class="entry-links">
+              <a class="quiet-link" href="{{ '/projects/geometry-of-a-treble/' | relative_url }}" target="_blank" rel="noopener">Site</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="content-row media-right">
+          <div class="entry-copy">
+            <p><strong class="entry-title">Argentina, Three Times</strong></p>
+            <p>
+              Argentina’s 2014, 2018, and 2022 World Cups compared through match journeys, score states, line-up continuity, and Messi’s evolving
+              network.
+            </p>
+            <p class="entry-meta">Tournament journeys · Score states · Line-up continuity</p>
+            <p class="entry-links">
+              <a class="quiet-link" href="{{ '/projects/argentina-three-times/' | relative_url }}" target="_blank" rel="noopener">Site</a>
+            </p>
+          </div>
+          <figure class="square-media project-art">
+            <img
+              src="{{ '/assets/img/argentina-three-times-cover.jpg' | relative_url }}"
+              alt="Three tournament paths with changing networks and distinct endpoints"
+              width="600"
+              height="600"
               loading="lazy"
             >
           </figure>
@@ -454,12 +528,6 @@
             ><span>PDF</span><strong>Curriculum vitae ↗</strong></a
           >
           <a href="https://github.com/fan-zhongyu" target="_blank" rel="noopener"><span>Code</span><strong>GitHub repositories ↗</strong></a>
-          <a href="https://zhongyu.shinyapps.io/2560FinalProject/" target="_blank" rel="noopener"
-            ><span>App</span><strong>ABM–SEIR simulator ↗</strong></a
-          >
-          <a href="https://github.com/fan-zhongyu/ABM-SEIR-Simulation" target="_blank" rel="noopener"
-            ><span>Repo</span><strong>ABM–SEIR source ↗</strong></a
-          >
         </div>
         <div class="skills-list">
           <p><strong>Programming</strong> R · Rcpp · Python · SQL · C++</p>
@@ -475,6 +543,14 @@
             <p>
               <strong class="entry-title">Away from the desk.</strong> Outside research, I enjoy soccer. This is a quieter, personal corner of the
               site that I will add to over time.
+            </p>
+            <p class="entry-links">
+              Interactive stories:
+              <a class="quiet-link" href="{{ '/projects/geometry-of-a-treble/' | relative_url }}" target="_blank" rel="noopener">MSN</a>
+              ·
+              <a class="quiet-link" href="{{ '/projects/argentina-three-times/' | relative_url }}" target="_blank" rel="noopener"
+                >Argentina, Three Times</a
+              >
             </p>
           </div>
           <div class="square-media pitch-mark" aria-hidden="true"><span></span></div>

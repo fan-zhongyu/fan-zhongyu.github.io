@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Zhongyu Fan">
+    <meta name="description" content="An interactive comparison of Argentina at the 2014, 2018 and 2022 FIFA World Cups.">
+    <link rel="canonical" href="https://fan-zhongyu.github.io/projects/argentina-three-times/">
+    <meta property="og:title" content="Argentina, Three Times">
+    <meta property="og:description" content="Three World Cup attempts compared through journeys, score states, line-ups and event traces.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fan-zhongyu.github.io/projects/argentina-three-times/">
+    <meta name="theme-color" content="#eaf2f4">
+    <title>Argentina, Three Times</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the visualisation</a>
+
+    <header class="masthead">
+      <a class="identity" href="#journeys" aria-label="Argentina, Three Times — return to the first visualisation">
+        <span class="identity-mark" aria-hidden="true">Archive<br>03</span>
+        <span class="identity-title"><strong>Argentina</strong><small>three World Cup editions</small></span>
+      </a>
+      <div class="masthead-actions">
+        <span class="archive-range" aria-hidden="true">2014 / 2018 / 2022</span>
+        <button class="text-button" type="button" data-open-notes aria-haspopup="dialog">Notes</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <h1 class="sr-only">Argentina, Three Times: 2014, 2018 and 2022 compared</h1>
+
+      <section class="chapter chapter-journeys" id="journeys" aria-labelledby="journeys-title">
+        <header class="chapter-heading">
+          <p class="chapter-index">01 / Journey</p>
+          <h2 id="journeys-title">Seven. Four. Seven.</h2>
+          <p>Each point is a match. Select one to open its clock.</p>
+        </header>
+        <div id="journey-visual" class="journey-visual" aria-live="polite"></div>
+        <div id="selected-match" class="selected-match"></div>
+      </section>
+
+      <nav class="lens-nav" aria-label="Choose a deeper comparison" role="tablist">
+        <button type="button" role="tab" aria-selected="true" aria-controls="decisive" data-lens="decisive" data-folio="02">Same clock</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="lineups" data-lens="lineups" data-folio="03">The XI</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="messi" data-lens="messi" data-folio="04">Number ten</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="events" data-lens="events" data-folio="05">Event trace</button>
+      </nav>
+
+      <section class="chapter lens-panel" id="decisive" aria-labelledby="decisive-title" role="tabpanel" data-lens-panel="decisive">
+        <header class="chapter-heading">
+          <p class="chapter-index">02 / Same clock</p>
+          <h2 id="decisive-title">The last match of each attempt.</h2>
+          <p>Lead, level, trail—aligned to one 120-minute scale. Short ticks mark Argentina substitutions.</p>
+        </header>
+        <div id="critical-visual" class="critical-visual"></div>
+        <p id="critical-readout" class="readout" aria-live="polite">Move across a clock to inspect a goal or substitution.</p>
+      </section>
+
+      <section class="chapter lens-panel" id="lineups" aria-labelledby="lineups-title" role="tabpanel" data-lens-panel="lineups" hidden>
+        <header class="chapter-heading">
+          <p class="chapter-index">03 / The XI</p>
+          <h2 id="lineups-title">Who remained when the team changed?</h2>
+          <p>Solid: started. Ring: entered as a substitute. The number above each column is retained starters from the previous match.</p>
+        </header>
+        <div id="lineup-visual" class="lineup-visual"></div>
+        <p id="lineup-readout" class="readout" aria-live="polite">Focus a player to read their tournament path.</p>
+      </section>
+
+      <section class="chapter lens-panel" id="messi" aria-labelledby="messi-title" role="tabpanel" data-lens-panel="messi" hidden>
+        <header class="chapter-heading">
+          <p class="chapter-index">04 / Number ten</p>
+          <h2 id="messi-title">The people around Messi.</h2>
+          <p>Closer means more shared starts. Larger means more goals by that teammate. This is a co-start map—not a passing network.</p>
+        </header>
+        <div id="orbit-visual" class="orbit-visual"></div>
+        <p id="orbit-readout" class="readout" aria-live="polite">Select a teammate to reveal the relationship.</p>
+      </section>
+
+      <section class="chapter lens-panel" id="events" aria-labelledby="events-title" role="tabpanel" data-lens-panel="events" hidden>
+        <header class="chapter-heading">
+          <p class="chapter-index">05 / Event layer</p>
+          <h2 id="events-title">Two editions leave a denser trace.</h2>
+          <p>Argentina events in five-minute bins. 2014 is left blank rather than reconstructed from an incompatible source.</p>
+        </header>
+        <div id="event-visual" class="event-visual"></div>
+        <p id="event-readout" class="readout" aria-live="polite">Select a 2018 or 2022 match above to change this layer.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Three tournaments, one common match record.</span>
+      <button class="text-button" type="button" data-open-notes>Method &amp; sources</button>
+    </footer>
+
+    <dialog class="notes" id="notes-dialog" aria-labelledby="notes-title">
+      <div class="notes-shell">
+        <header class="notes-header">
+          <div>
+            <p class="chapter-index">Notes</p>
+            <h2 id="notes-title">What this work does—and does not claim.</h2>
+          </div>
+          <button class="icon-button" type="button" data-close-notes aria-label="Close notes">×</button>
+        </header>
+
+        <nav class="notes-tabs" aria-label="Notes sections">
+          <button type="button" data-note-tab="about" aria-selected="true">About</button>
+          <button type="button" data-note-tab="method" aria-selected="false">Method</button>
+          <button type="button" data-note-tab="data" aria-selected="false">Data</button>
+          <button type="button" data-note-tab="cite" aria-selected="false">Cite</button>
+        </nav>
+
+        <div class="notes-content">
+          <section data-note-panel="about">
+            <h3>Three attempts at the same dream</h3>
+            <p>This work compares Argentina’s 2014, 2018 and 2022 World Cups through the records that can be made genuinely comparable: match progression, score state, goals, substitutions, line-ups and shared starts.</p>
+            <p>It is designed as an exploratory essay. It does not score a team’s “quality”, infer intent from a formation, or treat one match as a complete account of a tournament.</p>
+            <h3>Possible extensions</h3>
+            <p>A licensed 2014 event source could add a harmonised pitch layer. The 2022 StatsBomb 360 files could support a separate study of visible passing options around selected events. Neither is silently mixed into this edition.</p>
+          </section>
+
+          <section data-note-panel="method" hidden>
+            <h3>Common backbone</h3>
+            <p>All three editions use the same source and definitions for fixtures, results, goal times, substitutions and player appearances. “Retained” is the count of starters also present in the immediately preceding starting XI. “Near Messi” means matches in which both players started.</p>
+            <h3>Score state</h3>
+            <p>The match clocks exclude penalty-shootout kicks. A line above zero means Argentina led; below zero means Argentina trailed. Stoppage-time events are placed at regulation minute plus the recorded added minute.</p>
+            <h3>Event enhancement</h3>
+            <p>StatsBomb events are counted only for Argentina and grouped into five-minute bins. Pass completion follows StatsBomb’s convention: a pass without an outcome field is counted as complete. xG is displayed only inside this 2018/2022 layer and is never imputed for 2014.</p>
+          </section>
+
+          <section data-note-panel="data" hidden>
+            <h3>Fjelstul World Cup Database</h3>
+            <p>The common backbone is a modified extract of the Fjelstul World Cup Database: © 2023 Joshua C. Fjelstul, Ph.D., licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC BY-SA 4.0</a>. <a href="https://github.com/jfjelstul/worldcup">Source repository</a>.</p>
+            <p>Modifications: filtered to Argentina at the 2014, 2018 and 2022 men’s World Cups; normalized to Argentina’s perspective; derived score-state segments, retained-starter counts and co-start counts.</p>
+            <h3>StatsBomb Open Data</h3>
+            <p>The optional 2018 and 2022 event layer uses <a href="https://github.com/statsbomb/open-data">StatsBomb Open Data</a>. Event summaries retain the provider’s terminology. 2022 source matches include StatsBomb 360 availability, but freeze frames are not used here.</p>
+            <img class="provider-logo" src="./assets/statsbomb-logo.png" alt="StatsBomb">
+            <h3>Known boundary</h3>
+            <p>No StatsBomb 2014 World Cup season exists in the current open-data competition list. Soccer2014DS was considered but not mixed into the published layer because its reuse licence could not be confirmed to the same standard.</p>
+          </section>
+
+          <section data-note-panel="cite" hidden>
+            <h3>Suggested citation</h3>
+            <p>Fan, Zhongyu. “Argentina, Three Times.” Interactive data visualisation, 2026.</p>
+            <button class="copy-citation" type="button" data-copy-citation>Copy citation</button>
+            <p>A machine-readable citation is included in <code>CITATION.cff</code>. Please also preserve the dataset attribution above when adapting this work.</p>
+          </section>
+        </div>
+      </div>
+    </dialog>
+
+    <noscript>This project requires JavaScript to render its interactive comparisons.</noscript>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

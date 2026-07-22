@@ -192,6 +192,29 @@ section {
   text-align: center;
 }
 
+.project-subheading {
+  display: flex;
+  width: min(calc(100% - 24px), 580px);
+  margin: 0 auto;
+  padding: 30px 40px 0;
+  gap: 14px;
+  align-items: center;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.project-subheading::after {
+  height: 1px;
+  flex: 1;
+  background: var(--ink);
+  content: "";
+  opacity: 0.22;
+}
+
 .content-row {
   display: grid;
   width: min(calc(100% - 24px), 580px);
@@ -782,6 +805,11 @@ html.soccer-lightbox-open body {
 
   .section-heading {
     width: calc(100% - 24px);
+  }
+
+  .project-subheading {
+    width: calc(100% - 24px);
+    padding: 26px 24px 0;
   }
 
   .content-row {

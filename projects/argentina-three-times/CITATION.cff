@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use or adapt this work, please cite it and preserve the dataset attributions."
+title: "Argentina, Three Times"
+type: software
+version: 1.0.0
+date-released: 2026-07-21
+authors:
+  - family-names: Fan
+    given-names: Zhongyu
+abstract: >-
+  An interactive comparison of Argentina at the 2014, 2018 and 2022 FIFA World Cups,
+  using a CC BY-SA 4.0 Fjelstul World Cup Database extract as the common backbone and
+  StatsBomb Open Data as a labelled event enhancement for 2018 and 2022.
+license: MIT
+url: "https://fan-zhongyu.github.io/projects/argentina-three-times/"
+preferred-citation:
+  type: software
+  title: "Argentina, Three Times"
+  year: 2026
+  authors:
+    - family-names: Fan
+      given-names: Zhongyu
+  url: "https://fan-zhongyu.github.io/projects/argentina-three-times/"

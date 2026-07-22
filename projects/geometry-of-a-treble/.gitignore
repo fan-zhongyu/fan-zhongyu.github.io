@@ -1,0 +1,6 @@
+.DS_Store
+.cache/
+data/raw/
+__pycache__/
+*.py[cod]
+

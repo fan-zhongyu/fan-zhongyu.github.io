@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use or discuss this visualisation, please cite it as below and retain the StatsBomb data credit."
+title: "The Geometry of a Treble"
+type: software
+authors:
+  - family-names: Fan
+    given-names: Zhongyu
+date-released: 2026-07-21
+license: MIT
+abstract: >-
+  An interactive visual study of FC Barcelona's 2014–15 La Liga passing
+  geometry, with the 2015 Champions League final as an epilogue, built from
+  StatsBomb Open Data.
+keywords:
+  - football analytics
+  - data visualisation
+  - passing network
+  - FC Barcelona
+  - StatsBomb
+preferred-citation:
+  type: generic
+  authors:
+    - family-names: Fan
+      given-names: Zhongyu
+  title: "The Geometry of a Treble"
+  year: 2026
+
