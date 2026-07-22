@@ -27,7 +27,8 @@
   });
 
   const navLinks = [...document.querySelectorAll(".menu-nav a")];
-  const sections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+  const sectionLinks = navLinks.filter((link) => link.getAttribute("href")?.startsWith("#"));
+  const sections = sectionLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
 
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
@@ -52,7 +53,7 @@
         const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (!visible) return;
 
-        navLinks.forEach((link) => {
+        sectionLinks.forEach((link) => {
           const active = link.getAttribute("href") === `#${visible.target.id}`;
           if (active) link.setAttribute("aria-current", "true");
           else link.removeAttribute("aria-current");
@@ -149,11 +150,11 @@
     const endpoint = "https://page-views-api.ratneshc.com/api/v1";
     const query = new URLSearchParams({ site: "fan-zhongyu.github.io", path: "/" });
 
-    fetch(`${endpoint}/track?${query}`, { keepalive: true })
-      .then((response) => {
-        if (!response.ok) throw new Error(`Tracking failed with status ${response.status}`);
-        return fetch(`${endpoint}/views?${query}`);
-      })
+    fetch(`${endpoint}/track?${query}`, { keepalive: true }).catch(() => {
+      // Counting should remain visible even when this individual tracking request fails.
+    });
+
+    fetch(`${endpoint}/views?${query}`)
       .then((response) => {
         if (!response.ok) throw new Error(`Count failed with status ${response.status}`);
         return response.json();
