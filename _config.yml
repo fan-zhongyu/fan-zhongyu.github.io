@@ -187,7 +187,6 @@ exclude:
   - _books/
   - _news/
   - _pages/
-  - _posts/
   - _projects/
   - _teachings/
   - bin/
@@ -238,6 +237,11 @@ plugins:
 
 # Sitemap settings
 defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      published: false
   - scope:
       path: "assets"
     values:
