@@ -11,7 +11,7 @@ contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Statistical methodology and reproducible computing for biomedical research.
 footer_text: >
-  Zhongyu Fan · Brown University · Hosted by GitHub Pages.
+  Zhongyu Fan · Aut viam inveniam aut faciam.
 keywords: Zhongyu Fan, statistical research, biomedical data, Brown University, statistical genomics
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 📊 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
