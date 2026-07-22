@@ -89,9 +89,9 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
-permalink: /blog/:year/:title/
+blog_name: Notes & Resources # blog_name will be displayed in your notes page
+blog_description: Working notes on methods, statistical genetics, code, and useful academic resources.
+permalink: /notes/:year/:title/
 lsi: false # produce an index for related posts
 
 # Pagination
@@ -270,14 +270,14 @@ jekyll-archives:
   posts:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
     permalinks:
-      year: "/blog/:year/"
-      tags: "/blog/:type/:name/"
-      categories: "/blog/:type/:name/"
+      year: "/notes/:year/"
+      tags: "/notes/:type/:name/"
+      categories: "/notes/:type/:name/"
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
-display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
-display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+display_tags: ["google", "medium"] # starter tags displayed on the Notes & Resources page
+display_categories: ["external-posts"] # starter category displayed on the Notes & Resources page
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

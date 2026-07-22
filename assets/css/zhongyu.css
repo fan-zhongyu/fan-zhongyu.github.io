@@ -449,10 +449,42 @@ section {
   margin: 9px 0;
 }
 
-.soccer-intro {
-  width: min(calc(100% - 24px), 580px);
-  margin: 0 auto;
-  padding: 30px 40px 20px;
+.pitch-mark {
+  position: relative;
+  border: 1px solid var(--ink);
+  border-radius: 10px;
+}
+
+.pitch-mark::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px solid var(--ink);
+  content: "";
+}
+
+.pitch-mark::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.pitch-mark span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ink);
+  transform: translate(-50%, -50%);
 }
 
 .soccer-gallery-panel {
@@ -826,7 +858,6 @@ html.soccer-lightbox-open body {
   .plain-list,
   .skills-list,
   .contact-block,
-  .soccer-intro,
   .soccer-gallery-panel,
   .visitor-panel {
     width: calc(100% - 24px);
@@ -855,10 +886,6 @@ html.soccer-lightbox-open body {
 
   .resource-list {
     padding-top: 10px;
-  }
-
-  .soccer-intro {
-    padding: 26px 24px 18px;
   }
 
   .soccer-gallery-panel {

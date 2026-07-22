@@ -75,6 +75,7 @@
         <a href="#education">Education</a>
         <a href="#industry">Industry</a>
         <a href="#resources">Resources</a>
+        <a href="{{ '/notes/' | relative_url }}">Notes &amp; Resources</a>
         <a href="#soccer">Soccer</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -213,10 +214,10 @@
         <article class="content-row media-left">
           <figure class="square-media project-art public-health-cover">
             <img
-              src="{{ '/assets/img/public-health-masks-cover.jpg' | relative_url }}"
-              alt="Students wearing face masks and observing COVID-19 distancing rules at the University of Limpopo"
-              width="1920"
-              height="1451"
+              src="{{ '/assets/img/public-health-masks-us-cover.jpg' | relative_url }}"
+              alt="A diverse class of New York City bus operators wearing face masks at their training facility"
+              width="1280"
+              height="922"
               loading="lazy"
             >
           </figure>
@@ -237,12 +238,12 @@
               Cover photo:
               <a
                 class="quiet-link"
-                href="https://commons.wikimedia.org/wiki/File:People_wearing_masks_during_COVID-19.jpg"
+                href="https://commons.wikimedia.org/wiki/File:66_Bus_Operators_Graduate_New_York_City_Transit_Training_Program_(51915429497).jpg"
                 target="_blank"
                 rel="noopener"
-                >Tutgroup</a
+                >Marc A. Hermann / MTA</a
               >
-              · <a class="quiet-link" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener">CC BY-SA 4.0</a>
+              · <a class="quiet-link" href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="license noopener">CC BY 2.0</a>
               · cropped for display
             </p>
           </div>
@@ -537,7 +538,12 @@
 
       <section id="soccer" aria-labelledby="soccer-heading">
         <h2 class="section-heading" id="soccer-heading">Soccer</h2>
-        <p class="soccer-intro">Outside research, I love and enjoy soccer.</p>
+        <div class="content-row media-right">
+          <div class="entry-copy">
+            <p>Outside research, I love and enjoy soccer.</p>
+          </div>
+          <div class="square-media pitch-mark" aria-hidden="true"><span></span></div>
+        </div>
         <details class="soccer-gallery-panel">
           <summary>
             <span>Photo Gallery</span>
@@ -666,8 +672,8 @@
     <footer class="site-footer">
       <p>Zhongyu Fan</p>
       <p class="motto-latin" lang="la">Aut viam inveniam aut faciam.</p>
-      <p class="motto-zh" lang="zh-Hans">车到山前必有路，柳暗花明又一村</p>
-      <p><a href="#about">Back to top ↑</a></p>
+      <p class="motto-zh" lang="zh-Hans">车到山前必有路</p>
+      <p><a href="#about">Back to top ↑</a> · Hosted on GitHub Pages</p>
     </footer>
   </body>
 </html>
