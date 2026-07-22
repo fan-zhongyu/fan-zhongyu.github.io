@@ -445,6 +445,103 @@ section {
   font-weight: 400;
 }
 
+.notes-index {
+  padding-bottom: 34px;
+}
+
+.notes-intro,
+.notes-list {
+  width: min(calc(100% - 24px), 580px);
+  margin: 0 auto;
+}
+
+.notes-intro {
+  padding: 30px 40px 26px;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.notes-intro p {
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.notes-list {
+  padding: 0 40px;
+}
+
+.note-entry {
+  padding: 24px 0 25px;
+  border-top: 1px dotted var(--quiet-link);
+}
+
+.note-entry:last-child {
+  border-bottom: 1px solid var(--ink);
+}
+
+.note-entry-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: baseline;
+}
+
+.note-entry h2 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.note-entry h2 a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.note-entry time {
+  color: var(--ink);
+  font-size: 10.5px;
+  white-space: nowrap;
+  opacity: 0.65;
+}
+
+.note-description {
+  max-width: 470px;
+  margin: 12px 0 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.note-meta {
+  display: flex;
+  margin: 12px 0 0;
+  gap: 7px;
+  align-items: baseline;
+  color: var(--ink);
+  font-size: 10.5px;
+  line-height: 1.4;
+  opacity: 0.68;
+}
+
+.notes-page .pagination {
+  display: flex;
+  width: min(calc(100% - 104px), 476px);
+  margin: 22px auto 0;
+  padding: 0;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.notes-page .page-link {
+  font-size: 11px;
+}
+
+.notes-footer {
+  padding-top: 20px;
+}
+
 .skills-list {
   padding: 30px 40px 12px;
   font-size: 12.5px;
@@ -894,6 +991,42 @@ html.soccer-lightbox-open body {
 
   .resource-list {
     padding-top: 10px;
+  }
+
+  .notes-intro,
+  .notes-list {
+    width: calc(100% - 24px);
+  }
+
+  .notes-intro {
+    padding: 28px 24px 22px;
+    font-size: 14px;
+  }
+
+  .notes-list {
+    padding: 0 24px;
+  }
+
+  .note-entry {
+    padding: 23px 0 24px;
+  }
+
+  .note-entry-heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 7px;
+  }
+
+  .note-entry h2 {
+    font-size: 18px;
+  }
+
+  .note-description {
+    font-size: 14px;
+  }
+
+  .note-meta {
+    flex-wrap: wrap;
+    font-size: 11.5px;
   }
 
   .soccer-gallery-panel {

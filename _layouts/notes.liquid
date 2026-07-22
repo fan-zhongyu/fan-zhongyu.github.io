@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff">
+    <title>
+      {{ page.title }}
+      — Zhongyu Fan
+    </title>
+    <meta name="description" content="{{ site.blog_description | escape }}">
+    <meta name="author" content="Zhongyu Fan">
+    <link rel="canonical" href="{{ '/notes/' | absolute_url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ '/notes/' | absolute_url }}">
+    <meta property="og:title" content="{{ page.title }} — Zhongyu Fan">
+    <meta property="og:description" content="{{ site.blog_description | escape }}">
+    <meta property="og:image" content="{{ '/assets/img/zhongyu-social.png' | absolute_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <link
+      rel="preload"
+      href="{{ '/assets/fonts/cm-unicode/cmunorm.ttf' | relative_url }}?v=0.7.0"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    >
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2215%22 fill=%22%23000%22/><text x=%2250%22 y=%2266%22 text-anchor=%22middle%22 font-size=%2252%22 fill=%22white%22 font-family=%22serif%22>ZF</text></svg>"
+    >
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem('zf-theme');
+          const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.dataset.theme = saved || preferred;
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="{{ '/assets/css/zhongyu.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+    <script src="{{ '/assets/js/zhongyu.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="e0c14c23-ddac-4815-bb0e-dfa69c8bf077"
+      data-domains="fan-zhongyu.github.io"
+    ></script>
+  </head>
+  <body class="notes-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <details class="site-menu">
+      <summary>Menu</summary>
+      <nav class="menu-nav" aria-label="Primary navigation">
+        <a href="{{ '/#about' | relative_url }}">About</a>
+        <a href="{{ '/#research' | relative_url }}">Research</a>
+        <a href="{{ '/#projects' | relative_url }}">Projects</a>
+        <a href="{{ '/#education' | relative_url }}">Education</a>
+        <a href="{{ '/#industry' | relative_url }}">Industry</a>
+        <a href="{{ '/#resources' | relative_url }}">Tools &amp; Resources</a>
+        <a href="{{ '/notes/' | relative_url }}" aria-current="true">Notes</a>
+        <a href="{{ '/#soccer' | relative_url }}">Soccer</a>
+        <a href="{{ '/#contact' | relative_url }}">Contact</a>
+      </nav>
+    </details>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+      <span data-theme-label>Dark</span>
+    </button>
+
+    <header class="nameplate">
+      <h1><a href="{{ '/' | relative_url }}">Zhongyu Fan</a></h1>
+    </header>
+
+    <main id="main">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer notes-footer">
+      <p>&copy; Copyright {{ site.time | date: '%Y' }} Zhongyu Fan.</p>
+    </footer>
+  </body>
+</html>
