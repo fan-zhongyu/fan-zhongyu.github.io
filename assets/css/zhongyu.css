@@ -459,6 +459,100 @@ section {
   transform: translate(-50%, -50%);
 }
 
+.soccer-gallery-panel {
+  width: min(calc(100% - 24px), 580px);
+  margin: -4px auto 0;
+  padding: 0 40px 42px;
+}
+
+.soccer-gallery-panel summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-top: 1px dotted var(--quiet-link);
+  border-bottom: 1px solid var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+.soccer-gallery-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.soccer-gallery-panel summary::after {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 0.8;
+  content: "+";
+}
+
+.soccer-gallery-panel[open] summary::after {
+  content: "−";
+}
+
+.soccer-gallery-count {
+  color: var(--quiet-link);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.soccer-gallery {
+  display: grid;
+  grid-template-rows: repeat(2, 160px);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 8px;
+  padding-top: 14px;
+}
+
+.soccer-gallery-item {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #111;
+}
+
+.soccer-gallery-feature {
+  grid-row: 1 / span 2;
+}
+
+.soccer-gallery-item a {
+  display: block;
+  height: 100%;
+  color: #fff;
+}
+
+.soccer-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.soccer-gallery-item a:hover img {
+  transform: scale(1.025);
+}
+
+.soccer-gallery-item figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px 10px 9px;
+  background: linear-gradient(transparent, rgb(0 0 0 / 78%));
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
 .contact-block {
   padding: 36px 40px 40px;
   font-size: 13px;
@@ -612,6 +706,7 @@ section {
   .plain-list,
   .skills-list,
   .contact-block,
+  .soccer-gallery-panel,
   .visitor-panel {
     width: calc(100% - 24px);
   }
@@ -630,6 +725,31 @@ section {
     padding: 0 24px 36px;
     font-size: 14px;
     text-align: left;
+  }
+
+  .soccer-gallery-panel {
+    padding: 0 24px 38px;
+  }
+
+  .soccer-gallery-count {
+    font-size: 11px;
+  }
+
+  .soccer-gallery {
+    grid-template-rows: auto;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .soccer-gallery-feature {
+    grid-row: auto;
+  }
+
+  .soccer-gallery-feature a {
+    aspect-ratio: 3 / 4;
+  }
+
+  .soccer-gallery-item:not(.soccer-gallery-feature) a {
+    aspect-ratio: 16 / 10;
   }
 
   .industry-disclosure summary {
@@ -660,6 +780,10 @@ section {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .soccer-gallery-item img {
+    transition: none;
   }
 }
 
