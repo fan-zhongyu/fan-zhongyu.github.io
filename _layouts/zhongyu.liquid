@@ -71,6 +71,7 @@
       <nav class="menu-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#industry">Industry</a>
         <a href="#resources">Resources</a>
@@ -201,6 +202,50 @@
               cropped for display
             </p>
           </div>
+        </article>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-heading">
+        <h2 class="section-heading" id="projects-heading">Projects</h2>
+
+        <article class="content-row media-right">
+          <div class="entry-copy">
+            <p>
+              <strong class="entry-title"
+                ><a
+                  class="quiet-link"
+                  href="{{ '/assets/pdf/modelling-floral-pattern-formation-yeast-biofilms-poster.pdf' | relative_url }}"
+                  target="_blank"
+                  rel="noopener"
+                  >Modelling Floral Pattern Formation in Yeast Biofilms</a
+                ></strong
+              >
+            </p>
+            <p>
+              Why does a yeast colony sometimes grow petals instead of a boring circle? Here we put two published models side by side:
+              reaction–diffusion to ask when a smooth edge becomes unstable and picks a petal spacing, and continuum mechanics to track how cells,
+              extracellular matrix, and fluid set the colony’s radius and speed. No yeast was asked to solve PDEs; it still left us plenty of them.
+            </p>
+            <p class="entry-links">
+              <a
+                class="quiet-link"
+                href="{{ '/assets/pdf/modelling-floral-pattern-formation-yeast-biofilms-poster.pdf' | relative_url }}"
+                target="_blank"
+                rel="noopener"
+                >Poster ↗</a
+              >
+            </p>
+            <p class="entry-credit">Cover detail: floral yeast biofilm by Ee Lin Tek, reproduced in Tam (2019) · cropped from the project poster</p>
+          </div>
+          <figure class="square-media project-art yeast-biofilm-cover">
+            <img
+              src="{{ '/assets/img/yeast-biofilm-floral-cover.jpg' | relative_url }}?v=20260721"
+              alt="Petal-like floral pattern formed by a yeast biofilm in a Petri dish"
+              width="520"
+              height="520"
+              loading="lazy"
+            >
+          </figure>
         </article>
       </section>
 
