@@ -310,6 +310,10 @@ section {
   background: #fff;
 }
 
+.flare-cover {
+  border: 1px solid #000;
+}
+
 .public-health-cover img,
 .barcelona-cover img,
 .argentina-cover img {
