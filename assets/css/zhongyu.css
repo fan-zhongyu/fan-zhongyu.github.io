@@ -292,7 +292,7 @@ section {
 }
 
 .brown-campus img {
-  object-position: 50% 36%;
+  object-position: center;
 }
 
 .unnc-campus img {
@@ -301,6 +301,7 @@ section {
 
 .nyu-shanghai-campus img {
   object-position: center;
+  transform: scale(1.08);
 }
 
 .plain-list,
