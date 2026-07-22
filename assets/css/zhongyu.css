@@ -331,6 +331,69 @@ section {
   margin: 0;
 }
 
+.industry-list article {
+  padding: 15px 0;
+}
+
+.industry-list article + article {
+  border-top: 1px dotted var(--quiet-link);
+}
+
+.industry-role {
+  line-height: 1.35;
+}
+
+.industry-blurb {
+  margin-top: 6px !important;
+  line-height: 1.45;
+}
+
+.industry-disclosure {
+  margin-top: 10px;
+}
+
+.industry-disclosure summary {
+  width: max-content;
+  border-bottom: 1px solid currentColor;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  list-style: none;
+  cursor: pointer;
+}
+
+.industry-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.industry-disclosure summary::after {
+  content: " +";
+}
+
+.industry-disclosure[open] summary::after {
+  content: " −";
+}
+
+.industry-disclosure summary:hover {
+  text-decoration: none;
+  opacity: 0.65;
+}
+
+.industry-disclosure summary:focus-visible {
+  outline: 1px dotted currentColor;
+  outline-offset: 3px;
+}
+
+.industry-disclosure ul {
+  margin: 11px 0 2px;
+  padding-left: 17px;
+}
+
+.industry-disclosure li {
+  margin: 8px 0;
+  line-height: 1.45;
+}
+
 .resource-list {
   display: grid;
   padding-top: 32px;
@@ -567,6 +630,10 @@ section {
     padding: 0 24px 36px;
     font-size: 14px;
     text-align: left;
+  }
+
+  .industry-disclosure summary {
+    font-size: 12px;
   }
 
   .contact-block,
