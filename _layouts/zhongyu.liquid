@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#ffffff">
-    <title>Zhongyu Fan — Statistical Research &amp; Biomedical Data</title>
+    <title>Zhongyu Fan | Biostatistics &amp; Statistical Genetics</title>
     <meta
       name="description"
-      content="Zhongyu Fan is an Sc.M. student in Biostatistics at Brown University working on statistical methodology, biomedical data, and reproducible research computing."
+      content="Zhongyu Fan is a Biostatistics graduate student at Brown University working on statistical genetics, high-dimensional data analysis, and biomedical applications."
     >
     <meta name="author" content="Zhongyu Fan">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://fan-zhongyu.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fan-zhongyu.github.io/">
-    <meta property="og:title" content="Zhongyu Fan — Statistical Research &amp; Biomedical Data">
+    <meta property="og:title" content="Zhongyu Fan | Biostatistics &amp; Statistical Genetics">
     <meta
       property="og:description"
-      content="Statistical methodology and reproducible computing for biomedical research."
+      content="Biostatistics, statistical genetics, high-dimensional data analysis, and biomedical applications at Brown University."
     >
     <meta property="og:image" content="{{ '/assets/img/zhongyu-social.png' | absolute_url }}">
     <meta name="twitter:card" content="summary_large_image">
@@ -54,12 +55,53 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Zhongyu Fan",
-        "url": "https://fan-zhongyu.github.io/",
-        "email": "mailto:zhongyu_fan@outlook.com",
-        "affiliation": { "@type": "CollegeOrUniversity", "name": "Brown University" },
-        "sameAs": ["https://github.com/fan-zhongyu", "https://www.linkedin.com/in/zhongyu-fan/"]
+        "@graph": [
+          {
+            "@type": "ProfilePage",
+            "@id": "https://fan-zhongyu.github.io/#profile",
+            "url": "https://fan-zhongyu.github.io/",
+            "name": "Zhongyu Fan | Biostatistics & Statistical Genetics",
+            "mainEntity": { "@id": "https://fan-zhongyu.github.io/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://fan-zhongyu.github.io/#person",
+            "name": "Zhongyu Fan",
+            "givenName": "Zhongyu",
+            "familyName": "Fan",
+            "url": "https://fan-zhongyu.github.io/",
+            "image": "https://fan-zhongyu.github.io/assets/img/zhongyu-fan.jpg",
+            "email": "mailto:zhongyu_fan@outlook.com",
+            "jobTitle": "Graduate Student in Biostatistics",
+            "description": "Biostatistics graduate student at Brown University working on statistical genetics, high-dimensional data analysis, and biomedical applications.",
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "Brown University",
+              "url": "https://www.brown.edu/"
+            },
+            "knowsAbout": [
+              "Biostatistics",
+              "Statistical genetics",
+              "Statistical genomics",
+              "High-dimensional data analysis",
+              "Machine learning",
+              "Genome-wide association studies"
+            ],
+            "sameAs": [
+              "https://github.com/fan-zhongyu",
+              "https://www.linkedin.com/in/zhongyu-fan/",
+              "https://biostatistics.sph.brown.edu/people/current-masters-students"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://fan-zhongyu.github.io/#website",
+            "url": "https://fan-zhongyu.github.io/",
+            "name": "Zhongyu Fan",
+            "publisher": { "@id": "https://fan-zhongyu.github.io/#person" },
+            "inLanguage": "en"
+          }
+        ]
       }
     </script>
   </head>
@@ -115,8 +157,8 @@
             <p class="entry-links">
               <a href="mailto:zhongyu_fan@outlook.com">Email</a> ·
               <a href="{{ '/assets/pdf/zhongyu-fan-cv.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a> ·
-              <a href="https://github.com/fan-zhongyu" target="_blank" rel="noopener">GitHub</a> ·
-              <a href="https://www.linkedin.com/in/zhongyu-fan/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/fan-zhongyu" target="_blank" rel="me noopener">GitHub</a> ·
+              <a href="https://www.linkedin.com/in/zhongyu-fan/" target="_blank" rel="me noopener">LinkedIn</a>
             </p>
           </div>
         </div>

@@ -9,10 +9,10 @@ last_name: Fan
 contact_note: >
   Research conversations and collaboration inquiries are welcome.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Statistical methodology and reproducible computing for biomedical research.
+  Zhongyu Fan is a Biostatistics graduate student at Brown University working on statistical genetics, high-dimensional data analysis, and biomedical applications.
 footer_text: >
   Zhongyu Fan · Aut viam inveniam aut faciam.
-keywords: Zhongyu Fan, statistical research, biomedical data, Brown University, statistical genomics
+keywords: Zhongyu Fan, Brown University, Biostatistics, statistical genetics, statistical genomics, GWAS, high-dimensional data analysis
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 📊 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
