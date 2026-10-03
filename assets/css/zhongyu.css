@@ -428,6 +428,19 @@ section {
   line-height: 1.45;
 }
 
+.research-disclosure {
+  text-align: left;
+}
+
+.media-right .research-disclosure summary {
+  margin-left: auto;
+}
+
+.research-details {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 .resource-list {
   display: grid;
   padding-top: 10px;
@@ -943,6 +956,10 @@ html.soccer-lightbox-open body {
   .media-right .entry-copy {
     order: 2;
     text-align: left;
+  }
+
+  .media-right .research-disclosure summary {
+    margin-left: 0;
   }
 
   .media-right .square-media {

@@ -8,7 +8,7 @@
     <title>Zhongyu Fan | Biostatistics &amp; Statistical Genetics</title>
     <meta
       name="description"
-      content="Zhongyu Fan is a Biostatistics graduate student at Brown University working on statistical genetics, high-dimensional data analysis, and biomedical applications."
+      content="Zhongyu Fan is a Biostatistics graduate student at Brown University working on statistical genetics, GWAS–omics integration, spatial transcriptomics, and adolescent and family mental health."
     >
     <meta name="author" content="Zhongyu Fan">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -18,7 +18,7 @@
     <meta property="og:title" content="Zhongyu Fan | Biostatistics &amp; Statistical Genetics">
     <meta
       property="og:description"
-      content="Biostatistics, statistical genetics, high-dimensional data analysis, and biomedical applications at Brown University."
+      content="Statistical genetics, GWAS–omics integration, spatial transcriptomics, and adolescent and family mental health at Brown University."
     >
     <meta property="og:image" content="{{ '/assets/img/zhongyu-social.png' | absolute_url }}">
     <meta name="twitter:card" content="summary_large_image">
@@ -73,7 +73,7 @@
             "image": "https://fan-zhongyu.github.io/assets/img/zhongyu-fan.jpg",
             "email": "mailto:zhongyu_fan@outlook.com",
             "jobTitle": "Graduate Student in Biostatistics",
-            "description": "Biostatistics graduate student at Brown University working on statistical genetics, high-dimensional data analysis, and biomedical applications.",
+            "description": "Biostatistics graduate student at Brown University working on statistical genetics, GWAS–omics integration, spatial transcriptomics, and adolescent and family mental health.",
             "affiliation": {
               "@type": "CollegeOrUniversity",
               "name": "Brown University",
@@ -85,7 +85,10 @@
               "Statistical genomics",
               "High-dimensional data analysis",
               "Machine learning",
-              "Genome-wide association studies"
+              "Genome-wide association studies",
+              "Pleiotropy",
+              "Spatial transcriptomics",
+              "Adolescent and family mental health"
             ],
             "sameAs": [
               "https://github.com/fan-zhongyu",
@@ -149,10 +152,13 @@
               <a class="quiet-link" href="https://biostatistics.sph.brown.edu/" target="_blank" rel="noopener">Biostatistics</a> at Brown University.
             </p>
             <p>
-              I’m interested in statistical genetics, high-dimensional data analysis, optimization, and machine learning. More specifically, I develop
-              statistical methods that turn large-scale genetic and genomic data into biological insights.
+              I’m interested in statistical genetics, high-dimensional data analysis, optimization, and machine learning. I develop methods to uncover
+              shared genetic architecture across traits and connect GWAS with functional genomic and spatial transcriptomic data.
             </p>
-            <p>I also care about using data and statistical tools to understand social and mental-health challenges.</p>
+            <p>
+              I also care about using data to understand war-related trauma, adolescent mental health, and how families affect one another’s
+              wellbeing.
+            </p>
             <p class="entry-links">
               <a href="mailto:zhongyu_fan@outlook.com">Email</a> ·
               <a href="{{ '/assets/pdf/zhongyu-fan-cv.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a> ·
@@ -166,11 +172,11 @@
       <section aria-labelledby="interests-heading">
         <h2 class="section-heading" id="interests-heading">Research interests</h2>
         <div class="interest-list">
-          <p>Statistical learning · Optimization · High-dimensional data</p>
-          <p>Matrix factorization · Factor Analysis · Graph regularization</p>
-          <p>Statistical genetics and genomics · Genome-Wide Association Studies (GWAS)</p>
-          <p>Pleiotropy · Multi-trait analysis · Genetic architecture · Functional annotation</p>
-          <p>Child and adolescent mental health · Depressive symptoms · Behavioral health</p>
+          <p>Statistical learning · Deep learning · Optimization · High-dimensional data</p>
+          <p>Matrix factorization · Factor analysis · Graph regularization</p>
+          <p>Statistical genetics and genomics · GWAS · Post-GWAS</p>
+          <p>Pleiotropy · Multi-trait analysis · Functional annotation · Spatial transcriptomics</p>
+          <p>Adolescent and family mental health · War-related trauma · Depressive symptoms</p>
         </div>
       </section>
 
@@ -185,12 +191,27 @@
               >
             </p>
             <p>
-              GWAS have generated extensive summary statistics across complex traits. Matrix factorization provides a natural way to summarize a
-              high-dimensional variant-by-trait association matrix in terms of a smaller number of latent genetic factors. FLARE is designed to
-              incorporate functional annotations directly into the factorization.
+              Why do very different traits sometimes share the same genetic signals? FLARE uses functional annotations and graph-regularized sparse
+              factorization to uncover shared genetic structure in large collections of GWAS summary statistics. I developed the R/Rcpp algorithm,
+              designed its simulations and benchmarks, and applied it across UK Biobank, FinnGen, All of Us, and Biobank Japan.
             </p>
-            <p class="entry-links"><span>Coming Soon</span></p>
-            <p class="entry-meta">LASSO · Graph Laplacian · Factor Analysis</p>
+            <p class="entry-links"><span>Manuscript in preparation</span></p>
+            <p class="entry-meta">Graph regularization · Sparse factorization · Functional annotation</p>
+            <details class="industry-disclosure research-disclosure">
+              <summary>Manuscript &amp; details</summary>
+              <div class="research-details">
+                <p>
+                  <strong>Graph-Regularized Sparse Factorization Identifies Phenome-Wide Pleiotropic Genetic Factors</strong><br>
+                  Fan, Z., Gao, B., &amp; Ma, Y. · Manuscript in preparation
+                </p>
+                <ul>
+                  <li>Developed the R/Rcpp algorithm, including annotation graphs, proximal-gradient fitting, and model selection.</li>
+                  <li>Designed simulations and benchmarks to compare FLARE with existing GWAS factorization methods.</li>
+                  <li>Built reproducible HPC workflows for cross-biobank analyses, factor-level GWAS, and functional enrichment.</li>
+                </ul>
+                <p class="entry-meta">Advised by Ying Ma · Co-advised by Boran Gao</p>
+              </div>
+            </details>
           </div>
           <figure class="square-media project-art flare-cover">
             <img
@@ -216,9 +237,9 @@
           <div class="entry-copy">
             <p><strong class="entry-title">The Ukraine Youth and Family Longitudinal Study</strong></p>
             <p>
-              This study follows 1,200 youth and 1,200 parents/caregivers, tracking their mental health, daily experiences, exposure to stress, and
-              patterns of adaptation. As an analyst, I applied dyadic analysis to examine associations in war-related psychological distress within
-              Ukrainian adolescent–parent dyads.
+              War affects young people and their families, not just individuals. As lead analyst on a wave-1 study of Ukrainian adolescent–caregiver
+              dyads, I study how war exposure and psychological distress are connected within families. I’m now extending this work to
+              repeated-measures analyses to follow mental health over time.
             </p>
             <p>
               <a
@@ -229,9 +250,26 @@
                 >Learn more</a
               >
             </p>
+            <p class="entry-links"><span>Manuscript in preparation</span></p>
             <p class="entry-meta">
-              <a class="quiet-link" href="https://davidakenny.net/kkc/kkc.htm" target="_blank" rel="noopener">Dyadic analysis</a> · Logistic GEE Model
+              <a class="quiet-link" href="https://davidakenny.net/kkc/kkc.htm" target="_blank" rel="noopener">Dyadic analysis</a> · Logistic GEE ·
+              Longitudinal modelling
             </p>
+            <details class="industry-disclosure research-disclosure">
+              <summary>Manuscript &amp; details</summary>
+              <div class="research-details">
+                <p>
+                  <strong>War Exposure and Psychological Distress in Ukrainian Adolescent-Caregiver Dyads</strong><br>
+                  Fan, Z., Rajasankar, V., Dunsiger, S., Panok, V., Burlaka, V., Serdiuk, O., &amp; Sun, S. · Manuscript in preparation
+                </p>
+                <ul>
+                  <li>Designed and implemented the cross-sectional logistic GEE analysis of 1,604 adolescent–caregiver dyads.</li>
+                  <li>Developed data-cleaning and linkage protocols and prepared analytic and sensitivity-analysis datasets.</li>
+                  <li>Coordinated study-design clarification with Ukrainian collaborators and am extending the work to wave-2 analyses.</li>
+                </ul>
+                <p class="entry-meta">Advised by Shufang Sun · Global Mental Health and Flourishing Lab</p>
+              </div>
+            </details>
             <p class="entry-credit">
               Cover photo:
               <a
@@ -245,6 +283,38 @@
               cropped for display
             </p>
           </div>
+        </article>
+
+        <article class="content-row media-right">
+          <div class="entry-copy">
+            <p><strong class="entry-title">Linking GWAS to Spatial Transcriptomics</strong></p>
+            <p>
+              What links a complex trait to a particular part of a tissue? I’m working on methods that bring GWAS evidence together with spatial gene
+              expression to localize trait-associated tissue regions, alongside Chichun Tan in the Ma Lab at Brown.
+            </p>
+            <p class="entry-links"><span>Work in progress</span></p>
+            <p class="entry-meta">GWAS integration · Spatial transcriptomics · MAGMA</p>
+            <details class="industry-disclosure research-disclosure">
+              <summary>Research details</summary>
+              <div class="research-details">
+                <ul>
+                  <li>Preparing GWAS summary statistics and LD reference panels and deriving gene-level associations with MAGMA.</li>
+                  <li>Contributing to a framework that integrates genetic evidence with spatial gene expression.</li>
+                  <li>Benchmarking spatial localization against scDRS and gsMap on real spatial transcriptomics datasets.</li>
+                </ul>
+                <p class="entry-meta">Since August 2026 · Advised by Ying Ma</p>
+              </div>
+            </details>
+          </div>
+          <figure class="square-media project-art spatial-cover">
+            <img
+              src="{{ '/assets/img/gwas-spatial-transcriptomics-cover.svg' | relative_url }}"
+              alt="Schematic linking genetic association signals to a highlighted region in a spatial tissue map"
+              width="600"
+              height="600"
+              loading="lazy"
+            >
+          </figure>
         </article>
       </section>
 
@@ -426,8 +496,8 @@
                 ><br>
                 Sc.M. Candidate in Biostatistics
               </p>
-              <p class="industry-blurb">Todd ’87 and Christine Fisher P’17 Graduate Fellowship</p>
-              <p class="entry-meta">Providence, Rhode Island, 02903, USA</p>
+              <p class="industry-blurb">Fisher Graduate Fellowship</p>
+              <p class="entry-meta">Providence, RI</p>
             </div>
           </article>
           <article>
@@ -436,27 +506,30 @@
               <p class="industry-role">
                 <strong
                   ><a class="quiet-link" href="https://www.nottingham.ac.uk/" target="_blank" rel="noopener">University of Nottingham</a> /
-                  <a class="quiet-link" href="https://www.nottingham.edu.cn/en/index.aspx" target="_blank" rel="noopener"
-                    >University of Nottingham Ningbo China</a
-                  >
-                  (UNNC)</strong
+                  <a
+                    class="quiet-link"
+                    href="https://www.nottingham.edu.cn/en/index.aspx"
+                    aria-label="University of Nottingham Ningbo China (UNNC)"
+                    target="_blank"
+                    rel="noopener"
+                    >UNNC</a
+                  ></strong
                 ><br>
                 B.S. (Honors) in Mathematics with Applied Mathematics
               </p>
               <p class="industry-blurb">
-                Global Engagement Scholarship, Summer Exchange at
+                Global Engagement Scholarship · Summer exchange at
                 <strong><a class="quiet-link" href="https://kedge.edu/" target="_blank" rel="noopener">KEDGE Business School</a></strong>
               </p>
               <p class="industry-blurb">
-                Visiting Student at
+                Visiting student at
                 <strong
-                  ><a class="quiet-link" href="https://shanghai.nyu.edu/" target="_blank" rel="noopener">New York University Shanghai</a></strong
+                  ><a class="quiet-link" href="https://shanghai.nyu.edu/" aria-label="New York University Shanghai" target="_blank" rel="noopener"
+                    >NYU Shanghai</a
+                  ></strong
                 >
               </p>
-              <p class="entry-meta">
-                Nottingham, NG7 2RD, United Kingdom<br>
-                Ningbo, Zhejiang, 315000, China
-              </p>
+              <p class="entry-meta">Ningbo, China</p>
             </div>
           </article>
         </div>
@@ -466,11 +539,14 @@
         <h2 class="section-heading" id="industry-heading">Industry</h2>
         <div class="plain-list experience-list industry-list">
           <article>
-            <time datetime="2025">2025</time>
+            <time datetime="2024-11"
+              >Nov 2024–<br>
+              Jan 2025</time
+            >
             <div class="industry-copy">
               <p class="industry-role">
-                <strong><a class="quiet-link" href="https://www.iqvia.com/" target="_blank" rel="noopener">IQVIA.</a></strong> Management Consulting
-                Intern
+                <strong><a class="quiet-link" href="https://www.iqvia.com/" target="_blank" rel="noopener">IQVIA.</a></strong> Part-time Analyst
+                Intern, Management Consulting
               </p>
               <p class="industry-blurb">
                 Supported oncology market strategy through competitive research, expert interviews, clinical evidence synthesis, and quantitative
@@ -499,11 +575,14 @@
             </div>
           </article>
           <article>
-            <time datetime="2024">2024</time>
+            <time datetime="2024-07"
+              >Jul–Oct<br>
+              2024</time
+            >
             <div class="industry-copy">
               <p class="industry-role">
                 <strong><a class="quiet-link" href="https://www.halma.com/" target="_blank" rel="noopener">HALMA.</a></strong> Business Intelligence
-                Intern
+                and M&amp;A Research Summer Intern, Healthcare Sector
               </p>
               <p class="industry-blurb">
                 Combined disease-burden modelling, clinical research, and company screening to identify medical-device acquisition opportunities
@@ -538,8 +617,14 @@
       <section id="resources" aria-labelledby="resources-heading">
         <h2 class="section-heading" id="resources-heading">Tools &amp; Resources</h2>
         <div class="skills-list">
-          <p><strong>Programming</strong><span>R · Python (TensorFlow, NumPy, scikit-learn) · C++ (Rcpp) · Linux/Bash/Zsh · MATLAB · SQL</span></p>
-          <p><strong>GWAS Related</strong><span>PLINK/PLINK 2 · LDSC · MTAG · GCTA · MAGMA · FUMA · VEP</span></p>
+          <p>
+            <strong>Programming</strong
+            ><span>R · Python (PyTorch, TensorFlow, NumPy, scikit-learn) · C++ (Rcpp) · Linux/Bash/Zsh · MATLAB · SQL</span>
+          </p>
+          <p>
+            <strong>GWAS &amp; Omics</strong><span>PLINK/PLINK 2 · LDSC / stratified LDSC · MAGMA · scDRS · gsMap · MTAG · GCTA · FUMA · VEP</span>
+          </p>
+          <p><strong>HPC</strong><span>Slurm · Reproducible analysis pipelines</span></p>
           <p><strong>Others</strong><span>Git · LaTeX · HTML · Markdown</span></p>
         </div>
         <div class="plain-list resource-list">
